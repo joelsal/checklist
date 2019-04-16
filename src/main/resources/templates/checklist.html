@@ -17,6 +17,9 @@
 		#taskbutton {
 			margin-top: 10px;
 		}
+		#logoutbutton {
+			margin-top: 10px;
+		}
 		</style>
 	</head>
 	
@@ -43,6 +46,9 @@
 		<div class="container">
 			<a id="taskbutton" href="/add" class="btn btn-success">Add Task</a>
 		</div>
+		<form id="logoutbutton" class="container" th:action="@{/logout}" method="post">
+			<input type="submit" value="Sign Out" class="btn btn-danger"/>
+		</form>
 		
 		<script>
 		$(document).ready(function() {

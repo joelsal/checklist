@@ -3,13 +3,32 @@
 	  xmlns:th="http://www.thymeleaf.org">
 
 	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<title>Checklist</title>
+		<style>
+		#title {
+		width: 100%;
+		margin-bottom: 20px;
+		}
+		#task {
+		width: 100%;
+		margin-bottom: 20px;
+		}
+		#implist {
+		width: 20%;
+		margin-bottom: 20px;
+		}
+		</style>
 		<title>Checklist</title>
 	</head>
 	
 	<body>
-		<h1>Edit task</h1>
+		<h1 class="container">Edit task</h1>
 		<div>
-			<form th:object ="${entry}" th:action="@{../save}" action=# method="post">
+			<form class="container" th:object ="${entry}" th:action="@{../save}" action=# method="post">
 				<input type="hidden" th:field="*{id}" class="form-control"/>
 				<label for="title">Title</label>
 				<input type="text" id="title" th:field="*{entryName}" />
@@ -19,7 +38,7 @@
 				<select id="implist" th:field="*{importance.importanceid}" class="form-control">
 					<option th:each="importance: ${importances}" th:value="${importance.importanceid}" th:text="${importance.importanceState}"></option>
 				</select>
-				<input type="submit" value="Save"></input>
+				<input type="submit" value="Save" class="btn btn-success"></input>
 			</form>
 		</div>
 	</body>

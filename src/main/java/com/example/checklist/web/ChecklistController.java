@@ -20,6 +20,11 @@ public class ChecklistController {
 	@Autowired						//ImportanceRepository injection
 	private ImportanceRepository irepo;
 	
+	@RequestMapping(value = "/login")
+	public String login() {
+		return "/login";
+	}
+	
 	//Checklist page
 	@RequestMapping(value = "/checklist")	//End point for checklist template
 	public String checklist(Model model) {
